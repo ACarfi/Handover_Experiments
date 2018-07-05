@@ -1,0 +1,8 @@
+fname = '..\Data\imu_giver.json'; 
+rawData = loadJson(fname);
+clData = cleanData(rawData);
+[timestamp, linearAcc, angularVel] = decompress(rawData);
+
+figure
+subpot(3,1,1)
+scatter(linearAcc(:,1),linearAcc(:,2))
